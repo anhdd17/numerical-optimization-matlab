@@ -267,4 +267,4 @@ Ràng buộc affine nên KKT dạng dưới vi phân là điều kiện cần v�
 - Để KKT là điều kiện **cần**, cần điều kiện chính quy. Với bài toán lồi, điều kiện Slater đủ dùng, chỉ cần tìm **một** điểm chấp nhận được thỏa chặt các ràng buộc phi tuyến (kiểm tra được bằng một bài toán phụ, `slater_check.m`), không cần biết trước nghiệm. Slater còn bảo đảm tập nhân tử bị chặn (định lý 5) và đối ngẫu mạnh (câu 5).
 - Thiếu Slater, nghiệm có thể không là điểm KKT (ví dụ 2a), hoặc tập nhân tử không bị chặn (ví dụ 2b, 3). Ràng buộc affine không bao giờ gây ra vấn đề này (ví dụ 3, 4, 5).
 - Chứng minh định lý 4 chỉ dùng định lý tách tập lồi, không dùng đạo hàm, nên mở rộng ngay cho hàm lồi không khả vi qua dưới vi phân (ví dụ 5).
-- Giải hệ KKT có thể cho công thức nghiệm (ví dụ 4), và là cơ sở của các thuật toán cho quy hoạch lồi: Frank–Wolfe (câu 14), hàm phạt, điểm trong.
+- Giải hệ KKT có thể cho công thức nghiệm (ví dụ 4), và là cơ sở của các thuật toán cho quy hoạch lồi: Frank–Wolfe ([câu 14](../q14-frank-wolfe/)), hàm phạt, điểm trong.
