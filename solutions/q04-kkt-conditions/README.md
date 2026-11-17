@@ -104,7 +104,7 @@ vô nghiệm. Theo **bổ đề Farkas**, khi đó tồn tại $`\lambda_i \ge 0
 **Điều kiện Fritz John.** Không cần điều kiện chính quy, tại mọi cực tiểu địa phương luôn tồn tại $`(\lambda_0, \lambda, \mu) \ne 0`$ với $`\lambda_0 \ge 0`$, $`\lambda \ge 0`$ thỏa $`\lambda_0 \nabla f + \sum \lambda_i \nabla g_i + \sum \mu_j \nabla h_j = 0`$ và điều kiện bù. Nếu $`\lambda_0 = 0`$ thì điều kiện này không chứa thông tin gì về $`f`$. Vai trò của điều kiện chính quy chính là bảo đảm $`\lambda_0 \gt 0`$ (chia cho $`\lambda_0`$ được KKT). Ở ví dụ 5 và 6, chỉ có nhân tử Fritz John với $`\lambda_0 = 0`$.
 
 **Điều kiện đủ.**
-- *Bài toán lồi* ($`f, g_i`$ lồi, $`h_j`$ affine): mọi điểm KKT là **cực tiểu toàn cục** (xem câu 13).
+- *Bài toán lồi* ($`f, g_i`$ lồi, $`h_j`$ affine): mọi điểm KKT là **cực tiểu toàn cục** (xem [câu 13](../q13-convex-programming/)).
 - *Điều kiện đủ cấp 2*: nếu $`(x^*, \lambda^*, \mu^*)`$ thỏa KKT và
 
 ```math
@@ -228,6 +228,6 @@ Miền chấp nhận được chỉ gồm $`x^* = 0`$, nên đây là nghiệm. 
 ## 7. Nhận xét
 
 - Điều kiện KKT là điều kiện **cần** cho cực tiểu địa phương, nhưng chỉ khi có điều kiện chính quy (ví dụ 5, 6). Trong thực hành, LICQ và MFCQ là hai điều kiện dễ kiểm tra nhất; với bài toán lồi thường dùng Slater; với ràng buộc tuyến tính (như quy hoạch tuyến tính ở câu 1–3) thì không cần giả thiết thêm.
-- Điều kiện KKT không phải là điều kiện **đủ** trong trường hợp tổng quát (ví dụ 1 có điểm KKT là cực đại). Cần thêm tính lồi (câu 13) hoặc điều kiện cấp 2.
+- Điều kiện KKT không phải là điều kiện **đủ** trong trường hợp tổng quát (ví dụ 1 có điểm KKT là cực đại). Cần thêm tính lồi ([câu 13](../q13-convex-programming/)) hoặc điều kiện cấp 2.
 - Cách giải tay thường dùng: liệt kê các trường hợp tập tích cực, giải hệ (KKT1) cùng các ràng buộc tích cực, rồi loại các nghiệm vi phạm tính chấp nhận được hoặc có $`\lambda_i \lt 0`$ (ví dụ 2, 3).
 - Nhân tử Lagrange còn có ý nghĩa **độ nhạy**: nếu nới ràng buộc $`g_i(x) \le 0`$ thành $`g_i(x) \le \varepsilon`$ thì giá trị tối ưu thay đổi xấp xỉ $`-\lambda_i^* \varepsilon`$. Với quy hoạch tuyến tính, đây chính là biến đối ngẫu (xem câu 3, ví dụ 4 và [câu 5](../q05-lagrange-duality/)).

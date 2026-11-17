@@ -33,7 +33,7 @@ Bài tập lớn môn **Tối ưu hóa** (Thạc sĩ AI Engineering, học kỳ 
 | 10 | Gradient và Gradient quán tính | [`q10-gradient-momentum`](solutions/q10-gradient-momentum/) | ✅ |
 | 11 | Newton | [`q11-newton-method`](solutions/q11-newton-method/) | ✅ |
 | 12 | Tựa Newton | [`q12-quasi-newton`](solutions/q12-quasi-newton/) | ✅ |
-| 13 | Quy hoạch lồi: chính quy, KKT | — | ⬜ |
+| 13 | Quy hoạch lồi: chính quy, KKT | [`q13-convex-programming`](solutions/q13-convex-programming/) | ✅ |
 | 14 | Frank–Wolfe | — | ⬜ |
 | 15 | Rosen, Murtagh–Sargent | — | ⬜ |
 | 16 | Newton cho quy hoạch lồi ràng buộc tuyến tính | — | ⬜ |
