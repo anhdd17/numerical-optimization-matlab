@@ -183,5 +183,5 @@ Tại $`(2, 2)`$, $`f = 1`$. Dịch theo trục nào cũng làm $`f`$ tăng: $`f
 
 - **Ưu điểm**: rất đơn giản; không cần đạo hàm (khi dùng lát cắt vàng); mỗi bước chỉ là bài toán một biến. Khi cực tiểu theo từng tọa độ có công thức (hàm bậc hai, hồi quy LASSO, …), mỗi bước rất rẻ, nên phương pháp tọa độ được dùng nhiều cho các bài toán lớn.
 - **Nhược điểm**: hội tụ chậm khi các biến "liên kết" mạnh, tức là đường mức nằm chéo so với các trục (ví dụ 2, 3); có thể bị kẹt với hàm không trơn (ví dụ 4).
-- Cải tiến tự nhiên: sau mỗi vòng, đi thêm theo hướng $`x^{(k+1)} - x^{(k)}`$ (hướng "tổng hợp" của cả vòng) để vượt thung lũng. Đó là ý tưởng của **phương pháp tìm kiếm trực tiếp** Hooke–Jeeves ([câu 9](../../problems/README.md)).
+- Cải tiến tự nhiên: sau mỗi vòng, đi thêm theo hướng $`x^{(k+1)} - x^{(k)}`$ (hướng "tổng hợp" của cả vòng) để vượt thung lũng. Đó là ý tưởng của **phương pháp tìm kiếm trực tiếp** Hooke–Jeeves ([câu 9](../q09-hooke-jeeves/)).
 - Tiêu chuẩn dừng theo lượng giảm của $`f`$ có thể dừng quá sớm; nên kết hợp với tiêu chuẩn theo $`x`$, hoặc theo $`\lVert \nabla f \rVert`$ nếu có đạo hàm.
