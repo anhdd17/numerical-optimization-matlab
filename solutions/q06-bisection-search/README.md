@@ -71,7 +71,7 @@ Nếu $`f`$ khả vi và $`f'`$ đổi dấu đúng một lần trên $`[a, b]`$
 | Độ dài khoảng | $`(L_0 - 2\delta)/2^k + 2\delta`$ | $`L_0 / 2^k`$ |
 | Hệ số giảm mỗi lần tính hàm | $`\approx 1/\sqrt2 \approx 0.707`$ | $`1/2`$ |
 
-Phương pháp lát cắt vàng ([câu 7](../../problems/README.md)) chỉ dùng giá trị hàm nhưng tận dụng lại một điểm thử từ bước trước, nên mỗi lần tính $`f`$ giảm khoảng theo hệ số $`0.618`$, tốt hơn $`0.707`$ của chia đôi.
+Phương pháp lát cắt vàng ([câu 7](../q07-golden-section-search/)) chỉ dùng giá trị hàm nhưng tận dụng lại một điểm thử từ bước trước, nên mỗi lần tính $`f`$ giảm khoảng theo hệ số $`0.618`$, tốt hơn $`0.707`$ của chia đôi.
 
 ## 5. Chương trình Matlab
 
@@ -159,5 +159,5 @@ Sau bước 1, khoảng vẫn chứa cực tiểu toàn cục $`x^* \approx 5.14
 
 - Giải thuật chia đôi đơn giản, chắc chắn hội tụ với hàm unimodal, và biết trước số bước cần thiết. Tốc độ là **tuyến tính**: độ dài khoảng giảm theo cấp số nhân.
 - Biến thể dùng giá trị hàm không cần đạo hàm, nhưng mỗi bước tốn 2 lần tính $`f`$ và không tái sử dụng điểm thử cũ. Lát cắt vàng (câu 7) khắc phục điều này.
-- Tham số $`\delta`$ phải nhỏ hơn $`\varepsilon/2`$, nhưng cũng không được quá nhỏ: gần cực tiểu hàm rất phẳng, $`f(x_1) - f(x_2)`$ có thể nhỏ hơn sai số làm tròn, khi đó phép so sánh không còn đáng tin. Vì vậy các phương pháp chỉ dùng giá trị hàm thường chỉ đạt độ chính xác cỡ $`\sqrt{\epsilon_{\text{máy}}} \approx 10^{-8}`$ (tương đối), trong khi biến thể dùng đạo hàm có thể chính xác hơn.
+- Tham số $`\delta`$ phải nhỏ hơn $`\varepsilon/2`$, nhưng cũng không được quá nhỏ: gần cực tiểu hàm rất phẳng, $`f(x_1) - f(x_2)`$ có thể nhỏ hơn sai số làm tròn, khi đó phép so sánh không còn đáng tin. Vì vậy các phương pháp chỉ dùng giá trị hàm thường chỉ đạt độ chính xác cỡ $`\sqrt{\epsilon_{\text{máy}}} \approx 10^{-8}`$ (tương đối), trong khi biến thể dùng đạo hàm có thể chính xác hơn. Hiện tượng này được minh họa bằng số ở [câu 7, ví dụ 4](../q07-golden-section-search/).
 - Giả thiết unimodal là then chốt. Với hàm nhiều cực tiểu, cần khoanh vùng trước (quét lưới, hoặc biết trước tính chất của hàm).
