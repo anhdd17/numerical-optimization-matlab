@@ -31,7 +31,7 @@ trong đó $`M \gt 0`$ là một số **đủ lớn** (lớn hơn mọi số mà
 *Chứng minh.*
 1. Với mọi phương án $`x`$ của $`(P)`$, $`(x, 0)`$ là phương án của $`(P_M)`$, nên $`c^T x^* = F(x^*, 0) \le F(x, 0) = c^T x`$.
 2. Giả sử $`(P)`$ có phương án $`\bar x`$. Khi đó $`c^T \bar x = F(\bar x, 0) \ge F(x^*, x^{a*}) = c^T x^* + M \sum_i x^{a*}_i`$. Vì $`\sum_i x^{a*}_i \gt 0`$ nên bất đẳng thức này sai khi $`M`$ đủ lớn: mâu thuẫn.
-3. Nếu $`(P)`$ có phương án tối ưu thì theo định lý đối ngẫu ([câu 5](../../problems/README.md)), bài toán đối ngẫu $`\max\, b^Ty`$ với $`A^Ty \le c`$ có nghiệm $`\bar y`$. Với $`M \ge \max_i \bar y_i`$, $`\bar y`$ cũng thỏa ràng buộc đối ngẫu của $`(P_M)`$ (vì cột của $`x^a_i`$ là $`e_i`$ và $`e_i^T \bar y = \bar y_i \le M`$). Theo đối ngẫu yếu, $`F \ge b^T\bar y`$ với mọi phương án của $`(P_M)`$, tức là $`(P_M)`$ bị chặn dưới: mâu thuẫn. $`\blacksquare`$
+3. Nếu $`(P)`$ có phương án tối ưu thì theo định lý đối ngẫu ([câu 5](../q05-lagrange-duality/)), bài toán đối ngẫu $`\max\, b^Ty`$ với $`A^Ty \le c`$ có nghiệm $`\bar y`$. Với $`M \ge \max_i \bar y_i`$, $`\bar y`$ cũng thỏa ràng buộc đối ngẫu của $`(P_M)`$ (vì cột của $`x^a_i`$ là $`e_i`$ và $`e_i^T \bar y = \bar y_i \le M`$). Theo đối ngẫu yếu, $`F \ge b^T\bar y`$ với mọi phương án của $`(P_M)`$, tức là $`(P_M)`$ bị chặn dưới: mâu thuẫn. $`\blacksquare`$
 
 Chứng minh ý 3 cũng gợi ý một ngưỡng cụ thể cho "$`M`$ đủ lớn": $`M`$ lớn hơn các biến đối ngẫu tối ưu $`\bar y_i`$ ứng với các dòng có biến giả (xem ví dụ 4).
 

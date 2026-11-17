@@ -25,7 +25,7 @@ Bài tập lớn môn **Tối ưu hóa** (Thạc sĩ AI Engineering, học kỳ 
 | 2 | Đơn hình hai pha | [`q02-two-phase-simplex`](solutions/q02-two-phase-simplex/) | ✅ |
 | 3 | Phương pháp hàm phạt (bài toán M) | [`q03-big-m-method`](solutions/q03-big-m-method/) | ✅ |
 | 4 | Điều kiện chính quy, KKT | [`q04-kkt-conditions`](solutions/q04-kkt-conditions/) | ✅ |
-| 5 | Đối ngẫu Lagrange | — | ⬜ |
+| 5 | Đối ngẫu Lagrange | [`q05-lagrange-duality`](solutions/q05-lagrange-duality/) | ✅ |
 | 6 | Chia đôi | — | ⬜ |
 | 7 | Lát cắt vàng | — | ⬜ |
 | 8 | Gauss–Seidel | — | ⬜ |
