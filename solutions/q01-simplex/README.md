@@ -4,16 +4,16 @@
 
 Bài toán quy hoạch tuyến tính (QHTT) **dạng chính tắc**:
 
-$$
+```math
 \min\; f(x) = c^T x \quad \text{với}\quad Ax = b,\; x \ge 0,
-$$
+```
 
-trong đó $A \in \mathbb{R}^{m\times n}$, $\mathrm{rank}\,A = m < n$, $b \in \mathbb{R}^m$, $b \ge 0$ (nếu $b_i < 0$ thì nhân hai vế của ràng buộc thứ $i$ với $-1$).
+trong đó $A \in \mathbb{R}^{m\times n}$, $`\mathrm{rank}\,A = m < n`$, $b \in \mathbb{R}^m$, $b \ge 0$ (nếu $b_i < 0$ thì nhân hai vế của ràng buộc thứ $i$ với $-1$).
 
 ## 2. Các khái niệm cơ sở
 
-- **Cơ sở**: tập chỉ số $J_B = \{j_1,\dots,j_m\}$ sao cho ma trận $B = [A_{j_1},\dots,A_{j_m}]$ (gồm các cột $A_j$ của $A$) không suy biến. Các biến $x_j,\ j\in J_B$ gọi là **biến cơ sở**, các biến còn lại là **biến phi cơ sở** ($j \in J_N$).
-- **Phương án cực biên** (phương án cơ sở chấp nhận được): $x_B = B^{-1}b \ge 0$, $x_N = 0$. Về mặt hình học, đây là **đỉnh** của tập lồi đa diện $D = \{x : Ax=b, x\ge 0\}$.
+- **Cơ sở**: tập chỉ số $`J_B = \{j_1,\dots,j_m\}`$ sao cho ma trận $B = [A_{j_1},\dots,A_{j_m}]$ (gồm các cột $A_j$ của $A$) không suy biến. Các biến $x_j,\ j\in J_B$ gọi là **biến cơ sở**, các biến còn lại là **biến phi cơ sở** ($j \in J_N$).
+- **Phương án cực biên** (phương án cơ sở chấp nhận được): $x_B = B^{-1}b \ge 0$, $x_N = 0$. Về mặt hình học, đây là **đỉnh** của tập lồi đa diện $`D = \{x : Ax=b, x\ge 0\}`$.
 - **Định lý cơ bản của QHTT**: nếu bài toán có phương án tối ưu thì có phương án cực biên tối ưu. Vì số đỉnh là hữu hạn ($\le \binom{n}{m}$), ta chỉ cần tìm kiếm trên các đỉnh.
 
 **Ý tưởng của thuật toán đơn hình**: xuất phát từ một phương án cực biên, mỗi bước đi sang một **đỉnh kề** có giá trị hàm mục tiêu không lớn hơn, cho đến khi gặp đỉnh tối ưu hoặc phát hiện bài toán không bị chặn.
@@ -28,9 +28,9 @@ Với cơ sở $B$, ký hiệu:
 
 Khi tăng một biến phi cơ sở $x_s$ từ $0$ lên $\theta > 0$ (các biến phi cơ sở khác giữ bằng 0), ta có $x_B = B^{-1}b - \theta z_s$ và
 
-$$
+```math
 f = f_0 - \theta\,\Delta_s .
-$$
+```
 
 Từ đó suy ra ba định lý sau:
 
@@ -47,22 +47,22 @@ Từ đó suy ra ba định lý sau:
 **Bước 1. Kiểm tra tối ưu.** Tính $\Delta_j = c_B^T z_j - c_j$ với mọi $j$. Nếu $\Delta_j \le 0$ với mọi $j$ thì **dừng**: $x^*$ là phương án tối ưu, $f^* = c_B^T x_B$.
 
 **Bước 2. Chọn biến vào cơ sở.** Chọn cột $s$ có $\Delta_s > 0$:
-- *Quy tắc Dantzig*: $\Delta_s = \max\{\Delta_j : \Delta_j > 0\}$;
-- *Quy tắc Bland*: $s = \min\{j : \Delta_j > 0\}$.
+- *Quy tắc Dantzig*: $`\Delta_s = \max\{\Delta_j : \Delta_j > 0\}`$;
+- *Quy tắc Bland*: $`s = \min\{j : \Delta_j > 0\}`$.
 
 **Bước 3. Kiểm tra không bị chặn.** Nếu $z_{is} \le 0$ với mọi $i$ thì **dừng**: bài toán không bị chặn dưới. Khi đó hướng $d$ với $d_s = 1$, $d_B = -z_s$, các thành phần khác bằng 0, thỏa $Ad = 0$, $d \ge 0$ và $c^Td = -\Delta_s < 0$.
 
 **Bước 4. Chọn biến ra khỏi cơ sở** theo quy tắc tỉ số nhỏ nhất:
 
-$$
+```math
 \theta = \min\left\{ \frac{x_{B_i}}{z_{is}} : z_{is} > 0 \right\} = \frac{x_{B_r}}{z_{rs}} .
-$$
+```
 
 Biến $x_{B_r}$ rời cơ sở. Phần tử $z_{rs}$ gọi là **phần tử trục**.
 
 **Bước 5. Phép xoay** quanh phần tử trục $z_{rs}$:
 - dòng trục: $T_r \leftarrow T_r / z_{rs}$;
-- các dòng khác: $T_i \leftarrow T_i - z_{is}\,T_r$ với $i \ne r$;
+- các dòng khác: $`T_i \leftarrow T_i - z_{is}\,T_r`$ với $i \ne r$;
 - cập nhật cơ sở: $j_r \leftarrow s$.
 
 Quay lại Bước 1.
@@ -109,16 +109,16 @@ Cách chạy (trong thư mục `solutions/q01-simplex`):
 
 ### Ví dụ 1: bài toán có phương án tối ưu
 
-$$
+```math
 \begin{aligned}
 \min\; & f = -3x_1 - 2x_2 \\
 & x_1 + x_2 + x_3 = 4 \\
 & x_1 + 3x_2 + x_4 = 6 \\
 & x_1 + x_5 = 3, \qquad x \ge 0
 \end{aligned}
-$$
+```
 
-Cơ sở ban đầu là $\{x_3, x_4, x_5\}$ (các biến bù).
+Cơ sở ban đầu là $`\{x_3, x_4, x_5\}`$ (các biến bù).
 
 | Bước | Cơ sở | $x$ | $f$ | Biến vào | Biến ra | $\theta$ |
 |---|---|---|---|---|---|---|
@@ -134,28 +134,28 @@ Trên mặt phẳng $(x_1,x_2)$, thuật toán đi theo các cạnh của đa gi
 
 ### Ví dụ 2: hàm mục tiêu không bị chặn
 
-$$
+```math
 \begin{aligned}
 \min\; & f = -x_1 - x_2 \\
 & -x_1 + x_2 + x_3 = 1 \\
 & x_1 - 2x_2 + x_4 = 2, \qquad x \ge 0
 \end{aligned}
-$$
+```
 
-Sau 1 bước lặp, ta có $\Delta_2 = 3 > 0$ nhưng cột $z_2 = (-1, -2)^T \le 0$. Chương trình trả về `exitflag = -3` và hướng giảm vô hạn $d = (2, 1, 1, 0)$, với $Ad = 0$, $c^Td = -3 < 0$. Như vậy $x(t) = x^{(1)} + t\,d$ chấp nhận được với mọi $t \ge 0$ và $f \to -\infty$.
+Sau 1 bước lặp, ta có $\Delta_2 = 3 > 0$ nhưng cột $z_2 = (-1, -2)^T \le 0$. Chương trình trả về `exitflag = -3` và hướng giảm vô hạn $d = (2, 1, 1, 0)$, với $Ad = 0$, $c^Td = -3 < 0$. Như vậy $`x(t) = x^{(1)} + t\,d`$ chấp nhận được với mọi $t \ge 0$ và $f \to -\infty$.
 
 ### Ví dụ 3: bài toán suy biến gây xoay vòng (ví dụ của Beale)
 
-$$
+```math
 \begin{aligned}
 \min\; & f = -\tfrac34 x_4 + 20x_5 - \tfrac12 x_6 + 6x_7 \\
 & x_1 + \tfrac14 x_4 - 8x_5 - x_6 + 9x_7 = 0 \\
 & x_2 + \tfrac12 x_4 - 12x_5 - \tfrac12 x_6 + 3x_7 = 0 \\
 & x_3 + x_6 = 1, \qquad x \ge 0
 \end{aligned}
-$$
+```
 
-- **Quy tắc Dantzig**: sau 6 bước, cơ sở quay lại $\{x_1,x_2,x_3\}$ ban đầu trong khi $f$ vẫn bằng $0$. Đây là hiện tượng **xoay vòng**, chương trình phát hiện và trả về `exitflag = -4`.
+- **Quy tắc Dantzig**: sau 6 bước, cơ sở quay lại $`\{x_1,x_2,x_3\}`$ ban đầu trong khi $f$ vẫn bằng $0$. Đây là hiện tượng **xoay vòng**, chương trình phát hiện và trả về `exitflag = -4`.
 - **Quy tắc Bland**: thuật toán thoát khỏi đỉnh suy biến và dừng sau 6 bước tại $x^* = (0.75, 0, 0, 1, 0, 1, 0)$, $f^* = -1.25$, trùng với kết quả của `glpk`.
 
 ## 7. Nhận xét
