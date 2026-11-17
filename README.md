@@ -9,6 +9,7 @@ Bài tập lớn môn **Tối ưu hóa** (Thạc sĩ AI Engineering, học kỳ 
 ```
 .
 ├── problems/            # Đề bài (README.md) và ảnh chụp đề gốc
+├── tools/               # Script kiểm tra công thức trên GitHub
 └── solutions/
     └── qNN-<topic>/     # Mỗi câu một thư mục
         ├── README.md    # Báo cáo: lý thuyết, giải thuật, ví dụ
@@ -46,6 +47,15 @@ Yêu cầu: MATLAB (R2016b trở lên) hoặc GNU Octave.
 ```matlab
 >> cd solutions/q01-simplex
 >> run_examples
+```
+
+## Kiểm tra công thức trên GitHub
+
+Báo cáo dùng cú pháp công thức an toàn với GitHub (` ```math ` cho công thức khối, $`...`$ cho công thức inline). Sau khi viết hoặc sửa báo cáo:
+
+```bash
+python3 tools/github_math.py fix   solutions/*/README.md   # chuyển cú pháp
+python3 tools/github_math.py check solutions/*/README.md   # render thử qua GitHub API
 ```
 
 ## Quy ước đặt tên
