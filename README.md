@@ -21,7 +21,7 @@ Bài tập lớn môn **Tối ưu hóa** (Thạc sĩ AI Engineering, học kỳ 
 | Câu | Chủ đề | Thư mục | Trạng thái |
 |---|---|---|---|
 | 1 | Thuật toán đơn hình | [`q01-simplex`](solutions/q01-simplex/) | ✅ |
-| 2 | Đơn hình hai pha | — | ⬜ |
+| 2 | Đơn hình hai pha | [`q02-two-phase-simplex`](solutions/q02-two-phase-simplex/) | ✅ |
 | 3 | Phương pháp hàm phạt | — | ⬜ |
 | 4 | Điều kiện chính quy, KKT | — | ⬜ |
 | 5 | Đối ngẫu Lagrange | — | ⬜ |
