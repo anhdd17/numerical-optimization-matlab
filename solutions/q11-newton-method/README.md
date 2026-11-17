@@ -305,4 +305,4 @@ Hội tụ chỉ còn tuyến tính, nhưng vẫn nhanh hơn nhiều so với gr
 - Cái giá: mỗi bước cần Hessian ($`O(n^2)`$ đạo hàm riêng) và giải hệ tuyến tính ($`O(n^3)`$). Với $`n`$ lớn (hàng nghìn biến trở lên) hoặc khi khó tính Hessian, chi phí này quá đắt.
 - Newton thuần túy chỉ hội tụ **địa phương**: có thể làm tăng $`f`$ (ví dụ 2), phân kỳ ngay cả với hàm lồi ngặt (ví dụ 3), hoặc hội tụ tới điểm yên ngựa (ví dụ 4). Trong thực tế dùng Newton giảm bước (hàm lồi) hoặc Newton cải biên (hàm không lồi); cả hai giữ $`\alpha = 1`$ và $`\tau = 0`$ khi gần cực tiểu nên vẫn hội tụ bậc hai.
 - Khi Hessian tại $`x^*`$ suy biến (ví dụ 5), tốc độ chỉ còn tuyến tính, và tiêu chuẩn dừng theo $`\lVert \nabla f \rVert`$ đánh giá quá lạc quan độ chính xác của $`x`$.
-- Để giữ phần lớn tốc độ của Newton mà không cần tính Hessian và giải hệ $`O(n^3)`$, ta xấp xỉ Hessian (hoặc nghịch đảo của nó) từ các gradient đã tính: đó là thuật toán tựa Newton (câu 12).
+- Để giữ phần lớn tốc độ của Newton mà không cần tính Hessian và giải hệ $`O(n^3)`$, ta xấp xỉ Hessian (hoặc nghịch đảo của nó) từ các gradient đã tính: đó là thuật toán tựa Newton ([câu 12](../q12-quasi-newton/)).
