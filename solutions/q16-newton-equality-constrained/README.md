@@ -6,7 +6,7 @@
 (P)\qquad \min\; f(x) \quad \text{với}\quad A x = b,
 ```
 
-trong đó $`f : \mathbb{R}^n \to \mathbb{R} \cup \{+\infty\}`$ lồi, khả vi hai lần trên miền xác định mở $`\mathrm{dom}\, f`$, $`A \in \mathbb{R}^{p \times n}`$ có hạng $`p \lt n`$. Ràng buộc bất đẳng thức tuyến tính được xử lý bằng hàm chắn ở câu 17, nên câu này xét ràng buộc đẳng thức (đó cũng là bài toán con mà câu 17 phải giải ở mỗi bước).
+trong đó $`f : \mathbb{R}^n \to \mathbb{R} \cup \{+\infty\}`$ lồi, khả vi hai lần trên miền xác định mở $`\mathrm{dom}\, f`$, $`A \in \mathbb{R}^{p \times n}`$ có hạng $`p \lt n`$. Ràng buộc bất đẳng thức tuyến tính được xử lý bằng hàm chắn ở [câu 17](../q17-barrier-method/), nên câu này xét ràng buộc đẳng thức (đó cũng là bài toán con mà câu 17 phải giải ở mỗi bước).
 
 Vì mọi ràng buộc là affine, theo [câu 13](../q13-convex-programming/) không cần điều kiện chính quy: $`x^*`$ là nghiệm khi và chỉ khi tồn tại $`\nu^* \in \mathbb{R}^p`$ sao cho
 
@@ -123,7 +123,8 @@ flowchart TD
 | `run_examples.m` | Ba ví dụ minh họa và hai hình vẽ |
 
 - Miền xác định: hàm `f` trả về `Inf` ngoài $`\mathrm{dom}\, f`$ (ví dụ `-sum(log(max(x, 0)))` cho $`-\sum \log x_i`$); tìm kiếm quay lui giảm $`t`$ cho tới khi $`f`$ hữu hạn.
-- Hệ KKT giải bằng `\` trên ma trận đầy đủ cỡ $`n + p`$; nếu ma trận suy biến (`rcond` $`\lt 10^{-15}`$) thì dừng với `exitflag = -1`.
+- Hệ KKT giải bằng `\` trên ma trận đầy đủ cỡ $`n + p`$, sau khi cân bằng đường chéo $`DKD`$ với $`D = \mathrm{diag}(1/\sqrt{|H_{ii}|}, 1, \dots, 1)`$. Bước này cần cho câu 17: Hessian của hàm chắn có phần tử cỡ $`10^{16}`$, và khi chưa cân bằng thì `rcond` báo suy biến dù hệ giải được. Nếu ma trận sau cân bằng vẫn suy biến (`rcond` $`\lt 10^{-15}`$) thì dừng với `exitflag = -1`.
+- Điều kiện Armijo trên $`f`$ được nới thêm $`10 \varepsilon_{\mathrm{máy}} \lvert f(x) \rvert`$ (như câu 12); nếu quay lui vẫn không tìm được bước thì dừng với `exitflag = 2` (giới hạn độ chính xác máy).
 - Tham số mặc định: $`\alpha = 0.01`$, $`\beta = 0.5`$, $`\varepsilon = 10^{-10}`$, $`\varepsilon_{\mathrm{feas}} = 10^{-10} \max(1, \lVert b \rVert)`$.
 - Kết quả: nghiệm $`x`$, nhân tử $`\nu`$ (thỏa $`\nabla f(x) + A^T \nu \approx 0`$), lịch sử `out.X`, `out.F`, `out.dec` ($`\lambda^2/2`$), `out.rnorm` ($`\lVert r \rVert`$), `out.feas` ($`\lVert Ax - b \rVert`$), `out.ts` (các bước $`t`$).
 - Ví dụ 3 dùng `bisection_min.m` của [câu 6](../q06-bisection-search/) để giải bài toán đối ngẫu một biến, làm lời giải đối chiếu độc lập.
@@ -173,7 +174,7 @@ Mọi bước đều là bước đầy đủ, $`\lambda^2/2`$ giảm bậc hai 
 
 | $`k`$ | 0 | 1 | 2 | 3 | 4 |
 |---|---|---|---|---|---|
-| $`\lVert A x_k - b \rVert`$ | 119.63 | 117.76 | 114.08 | 99.817 | $`3.2\cdot10^{-14}`$ |
+| $`\lVert A x_k - b \rVert`$ | 119.63 | 117.76 | 114.08 | 99.817 | $`5.9\cdot10^{-14}`$ |
 | Tỉ số với bước trước | | 0.98437 | 0.96875 | 0.875 | |
 | $`1 - t_{k-1}`$ | | 0.98438 | 0.96875 | 0.875 | 0 |
 
@@ -210,4 +211,4 @@ Chia đôi theo dấu $`q'`$ trên $`[-5, 5]`$ (câu 6, 50 bước): $`\theta = 
 - Ràng buộc đẳng thức tuyến tính được xử lý "miễn phí" trong Newton: chỉ cần thay hệ Newton $`\nabla^2 f \Delta x = -\nabla f`$ bằng hệ KKT có thêm $`p`$ dòng. Thuật toán tương đương với Newton không ràng buộc trên $`n - p`$ biến (định lý 1), nên giữ nguyên hội tụ bậc hai và bất biến affine của câu 11.
 - Xuất phát chấp nhận được: mọi điểm lặp chấp nhận được, $`f`$ giảm đơn điệu, $`\lambda^2/2`$ cho tiêu chuẩn dừng tự nhiên. Nhưng cần có $`x_0 \in \mathrm{dom}\, f`$ với $`Ax_0 = b`$, mà việc tìm điểm này (ví dụ với $`x \gt 0`$) đã là một bài toán (pha 1).
 - Xuất phát bất kỳ: chỉ cần $`x_0 \in \mathrm{dom}\, f`$. Độ vi phạm $`\lVert Ax - b \rVert`$ giảm theo hệ số $`(1 - t)`$ và bằng 0 ngay sau bước đầy đủ đầu tiên; từ đó thuật toán trùng với trường hợp xuất phát chấp nhận được. Đổi lại $`f`$ không giảm đơn điệu.
-- Đây là bài toán con cốt lõi của phương pháp hàm chắn (câu 17): mỗi bước ngoài giải một bài toán $`\min t f_0 + \phi`$ với $`Ax = b`$ bằng chính thuật toán này.
+- Đây là bài toán con cốt lõi của phương pháp hàm chắn ([câu 17](../q17-barrier-method/)): mỗi bước ngoài giải một bài toán $`\min t f_0 + \phi`$ với $`Ax = b`$ bằng chính thuật toán này.

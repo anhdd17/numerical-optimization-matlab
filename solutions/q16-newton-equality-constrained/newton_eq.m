@@ -37,7 +37,8 @@ function [x, nu, out] = newton_eq(f, grad, hess, A, b, x0, opts)
 %   x, nu - nghiem va nhan tu Lagrange cua A x = b (grad f(x) + A' nu = 0)
 %   out   - struct: .iterations, .X, .F, .dec (lambda^2/2, ban chap nhan duoc),
 %           .rnorm (||r||), .feas (||A x - b||), .ts (cac buoc t), .start,
-%           .exitflag (1: dat sai so; 0: het maxIter; -1: he KKT suy bien / x0 ngoai mien)
+%           .exitflag (1: dat sai so; 0: het maxIter; -1: he KKT suy bien / x0 ngoai mien;
+%           2: tim kiem quay lui khong tien duoc - gioi han do chinh xac may)
 
   if nargin < 7, opts = struct(); end
   tolFeas = get_opt(opts, 'tolFeas', 1e-10 * max(1, norm(b)));
@@ -78,13 +79,17 @@ function [x, nu, out] = newton_eq(f, grad, hess, A, b, x0, opts)
 
   for k = 0:maxIter
     g = grad(x);  H = hess(x);
-    K = [H, A'; A, zeros(p)];
+    % Can bang duong cheo D K D (D = diag(1/sqrt|H_ii|), 1 cho p dong rang buoc): khi
+    % H co phan tu rat lon (ham chan, cau 17) he KKT bi lech thang do nhung sau can
+    % bang thi on dinh.
+    dsc = [1 ./ sqrt(max(abs(diag(H)), realmin)); ones(p, 1)];
+    K = diag(dsc) * [H, A'; A, zeros(p)] * diag(dsc);
     if rcond(K) < 1e-15
       out.exitflag = -1;
       break;
     end
     if strcmp(start, 'feasible')
-      sol = K \ [-g; zeros(p, 1)];
+      sol = dsc .* (K \ (dsc .* [-g; zeros(p, 1)]));
       dx = sol(1:n);  w = sol(n+1:end);
       dec = dx' * H * dx / 2;                  % lambda(x)^2 / 2
       out.dec(end+1) = dec;
@@ -97,9 +102,15 @@ function [x, nu, out] = newton_eq(f, grad, hess, A, b, x0, opts)
       t = 1;                                   % quay lui tren f, giu x trong mien xac dinh
       while true
         ft = f(x + t * dx);
-        if isfinite(ft) && ft <= fx + alpha * t * (g' * dx), break; end
+        % noi them 10*eps*|f(x)|: gan nghiem, luong giam nho hon sai so lam tron cua f
+        if isfinite(ft) && ft <= fx + alpha * t * (g' * dx) + 10 * eps * abs(fx), break; end
         t = beta * t;
         if t < 1e-16, break; end
+      end
+      if t < 1e-16
+        out.exitflag = 2;                      % khong giam duoc f: gioi han do chinh xac may
+        if display, fprintf('%4d %16.10g %14.4e  (dung: buoc qua nho)\n', k, fx, dec); end
+        break;
       end
       if display, fprintf('%4d %16.10g %14.4e %10.4g\n', k, fx, dec, t); end
       x = x + t * dx;  fx = ft;
@@ -113,7 +124,7 @@ function [x, nu, out] = newton_eq(f, grad, hess, A, b, x0, opts)
         out.exitflag = double(feas <= tolFeas && rn <= tol);
         break;
       end
-      sol = -(K \ r);
+      sol = -dsc .* (K \ (dsc .* r));
       dx = sol(1:n);  dnu = sol(n+1:end);
       t = 1;                                   % quay lui tren ||r||
       while true
@@ -121,6 +132,11 @@ function [x, nu, out] = newton_eq(f, grad, hess, A, b, x0, opts)
         if isfinite(f(xt)) && norm(rfun(xt, nu + t * dnu)) <= (1 - alpha * t) * rn, break; end
         t = beta * t;
         if t < 1e-16, break; end
+      end
+      if t < 1e-16
+        out.exitflag = 2;
+        if display, fprintf('%4d %16.10g %12.4e %12.4e  (dung: buoc qua nho)\n', k, fx, rn, feas); end
+        break;
       end
       if display, fprintf('%4d %16.10g %12.4e %12.4e %10.4g\n', k, fx, rn, feas, t); end
       x = x + t * dx;  nu = nu + t * dnu;  fx = f(x);

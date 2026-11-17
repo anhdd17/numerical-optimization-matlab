@@ -178,5 +178,5 @@ Solver `qp`: $`f^* = -0.1272997914`$, danh mục tối ưu có **14** tài sản
 
 - Frank–Wolfe chỉ cần giải các bài toán **tuyến tính** trên $`D`$, mọi điểm lặp tự động chấp nhận được, không cần phép chiếu. Thuật toán rất đơn giản và rẻ khi bài toán tuyến tính con dễ (đơn hình, hình hộp, tập luồng trên mạng).
 - Khe $`G_k`$ cho chứng chỉ sai số $`f(x_k) - f^* \le G_k`$ miễn phí ở mỗi bước, là tiêu chuẩn dừng tin cậy mà không cần biết $`f^*`$.
-- Tốc độ chung là $`O(1/k)`$, và đúng là $`\Theta(1/k)`$ khi nghiệm nằm giữa một mặt (ví dụ 1). Để đạt độ chính xác cao nên dùng biến thể có bước lùi (hội tụ tuyến tính với $`f`$ lồi mạnh) hoặc phương pháp bậc hai ([câu 16](../q16-newton-equality-constrained/), câu 17).
+- Tốc độ chung là $`O(1/k)`$, và đúng là $`\Theta(1/k)`$ khi nghiệm nằm giữa một mặt (ví dụ 1). Để đạt độ chính xác cao nên dùng biến thể có bước lùi (hội tụ tuyến tính với $`f`$ lồi mạnh) hoặc phương pháp bậc hai ([câu 16](../q16-newton-equality-constrained/), [câu 17](../q17-barrier-method/)).
 - Biểu diễn $`x_k`$ qua ít đỉnh làm nghiệm gần đúng **thưa**, có ý nghĩa trong ứng dụng (danh mục ít tài sản).
