@@ -61,7 +61,7 @@ function [x, fval, exitflag, out] = two_phase_simplex(c, A, b, opts)
     j = find(all(abs(A - e) <= tol, 1), 1);
     if ~isempty(j), B(i) = j; end
   end
-  rowsArt = find(B == 0);
+  rowsArt = reshape(find(B == 0), 1, []);    % 1 x k ca khi k = 0 (find tren 1 x 1 cho 0 x 0)
   k = numel(rowsArt);
   art = n + (1:k);
   Aart = zeros(m, k);

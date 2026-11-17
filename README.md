@@ -38,7 +38,7 @@ Bài tập lớn môn **Tối ưu hóa** (Thạc sĩ AI Engineering, học kỳ 
 | 15 | Rosen, Murtagh–Sargent | [`q15-gradient-projection`](solutions/q15-gradient-projection/) | ✅ |
 | 16 | Newton cho quy hoạch lồi ràng buộc tuyến tính | [`q16-newton-equality-constrained`](solutions/q16-newton-equality-constrained/) | ✅ |
 | 17 | Hàm chắn Newton | [`q17-barrier-method`](solutions/q17-barrier-method/) | ✅ |
-| 18 | Đơn hình Beale cho quy hoạch toàn phương | — | ⬜ |
+| 18 | Đơn hình Beale cho quy hoạch toàn phương | [`q18-beale-quadratic-programming`](solutions/q18-beale-quadratic-programming/) | ✅ |
 
 ## Chạy chương trình
 
