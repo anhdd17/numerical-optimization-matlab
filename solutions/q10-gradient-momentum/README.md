@@ -198,4 +198,4 @@ Hessian tại $`x^*`$ có trị riêng $`0.3994`$ và $`1001.6`$: $`L \approx 10
 - Tìm kiếm chính xác theo tia không cải thiện được tốc độ trong trường hợp xấu nhất (ví dụ 1), và đắt hơn nhiều; trong thực tế dùng Armijo hoặc điều kiện Wolfe.
 - Gradient quán tính chỉ tốn thêm một phép cộng vector mỗi bước nhưng giảm số bước từ cỡ $`\kappa`$ xuống cỡ $`\sqrt\kappa`$ (ví dụ 2, 4). Đây là ý tưởng nền tảng của các thuật toán tối ưu trong học máy (SGD với momentum, Nesterov, Adam).
 - Bước quá lớn ($`\alpha \gt 2/L`$) làm thuật toán phân kỳ (ví dụ 1) hoặc dao động không hội tụ (ví dụ 4). Hằng số $`L`$ là độ cong lớn nhất, nên phải ước lượng được nó hoặc dùng tìm kiếm theo tia.
-- Để vượt giới hạn $`\sqrt\kappa`$, cần dùng thông tin bậc hai: thuật toán Newton (câu 11) và tựa Newton (câu 12).
+- Để vượt giới hạn $`\sqrt\kappa`$, cần dùng thông tin bậc hai: thuật toán Newton ([câu 11](../q11-newton-method/)) và tựa Newton (câu 12).

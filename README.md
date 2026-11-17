@@ -31,7 +31,7 @@ Bài tập lớn môn **Tối ưu hóa** (Thạc sĩ AI Engineering, học kỳ 
 | 8 | Gauss–Seidel | [`q08-gauss-seidel`](solutions/q08-gauss-seidel/) | ✅ |
 | 9 | Tìm kiếm trực tiếp (Hooke–Jeeves) | [`q09-hooke-jeeves`](solutions/q09-hooke-jeeves/) | ✅ |
 | 10 | Gradient và Gradient quán tính | [`q10-gradient-momentum`](solutions/q10-gradient-momentum/) | ✅ |
-| 11 | Newton | — | ⬜ |
+| 11 | Newton | [`q11-newton-method`](solutions/q11-newton-method/) | ✅ |
 | 12 | Tựa Newton | — | ⬜ |
 | 13 | Quy hoạch lồi: chính quy, KKT | — | ⬜ |
 | 14 | Frank–Wolfe | — | ⬜ |
