@@ -30,7 +30,7 @@ Bài tập lớn môn **Tối ưu hóa** (Thạc sĩ AI Engineering, học kỳ 
 | 7 | Lát cắt vàng | [`q07-golden-section-search`](solutions/q07-golden-section-search/) | ✅ |
 | 8 | Gauss–Seidel | [`q08-gauss-seidel`](solutions/q08-gauss-seidel/) | ✅ |
 | 9 | Tìm kiếm trực tiếp (Hooke–Jeeves) | [`q09-hooke-jeeves`](solutions/q09-hooke-jeeves/) | ✅ |
-| 10 | Gradient và Gradient quán tính | — | ⬜ |
+| 10 | Gradient và Gradient quán tính | [`q10-gradient-momentum`](solutions/q10-gradient-momentum/) | ✅ |
 | 11 | Newton | — | ⬜ |
 | 12 | Tựa Newton | — | ⬜ |
 | 13 | Quy hoạch lồi: chính quy, KKT | — | ⬜ |
