@@ -1,0 +1,13 @@
+# Third-party agent toolkits (cloned separately, not part of this project)
+agents/
+
+# MATLAB / Octave artefacts
+octave-workspace
+*.asv
+*.mex*
+slprj/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
