@@ -55,9 +55,12 @@ def fix(path):
         if in_dollar_block:
             out.append(line)
             continue
-        line, k = INLINE.subn(lambda m: '$`' + m.group(1) + '`$', line)
-        n_inline += k
-        out.append(line)
+        # leave inline code spans and already-converted $`...`$ untouched
+        parts = re.split(r'(\$`.*?`\$|`[^`]*`)', line)
+        for j in range(0, len(parts), 2):
+            parts[j], k = INLINE.subn(lambda m: '$`' + m.group(1) + '`$', parts[j])
+            n_inline += k
+        out.append(''.join(parts))
     text = '\n'.join(out)
     text = re.sub(r'(```math\n)(.*?)(```)', lambda m: m.group(1) + lt_gt(m.group(2)) + m.group(3),
                   text, flags=re.S)

@@ -28,7 +28,7 @@ Bài tập lớn môn **Tối ưu hóa** (Thạc sĩ AI Engineering, học kỳ 
 | 5 | Đối ngẫu Lagrange | [`q05-lagrange-duality`](solutions/q05-lagrange-duality/) | ✅ |
 | 6 | Chia đôi | [`q06-bisection-search`](solutions/q06-bisection-search/) | ✅ |
 | 7 | Lát cắt vàng | [`q07-golden-section-search`](solutions/q07-golden-section-search/) | ✅ |
-| 8 | Gauss–Seidel | — | ⬜ |
+| 8 | Gauss–Seidel | [`q08-gauss-seidel`](solutions/q08-gauss-seidel/) | ✅ |
 | 9 | Tìm kiếm trực tiếp | — | ⬜ |
 | 10 | Gradient và Gradient quán tính | — | ⬜ |
 | 11 | Newton | — | ⬜ |
