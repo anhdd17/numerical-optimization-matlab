@@ -1,7 +1,6 @@
 # Bài tập lớn môn Tối ưu hóa
 
-> Nguồn: 3 ảnh chụp màn hình file `Bai tap lon Toi uu hoa.pdf`, lưu trong [`images/`](images/).
-> ⚠️ Ảnh chụp chỉ thấy đầy đủ câu 1–16; câu 17 bị cắt, câu 18 không có trong ảnh — cần bổ sung từ file PDF gốc.
+> Nguồn: file `Bai tap lon Toi uu hoa.pdf` (bản ảnh chụp câu 1–16 lưu trong [`images/`](images/)); câu 17, 18 bổ sung theo file PDF.
 
 ## Danh sách đề
 
@@ -15,8 +14,7 @@
 
 5. Hàm đối ngẫu Lagrange, bài toán đối ngẫu Lagrange, các định lý đối ngẫu. Lấy ví dụ minh họa.
 
-6. Trình bày giải thuật Chia đôi và viết chương trình Matlab tương ứng tìm [cực tiểu] hàm một biến trong một khoảng. Lấy ví dụ minh họa.
-   *(Một phần câu bị che trong ảnh; "[cực tiểu]" là suy ra theo câu 7.)*
+6. Trình bày giải thuật Chia đôi và viết chương trình Matlab tương ứng tìm cực tiểu hàm một biến trong một khoảng. Lấy ví dụ minh họa.
 
 7. Trình bày giải thuật Lát cắt vàng và viết chương trình tương ứng Matlab tìm cực tiểu hàm một biến trong một khoảng. Lấy ví dụ minh họa.
 
@@ -38,10 +36,10 @@
 
 16. Trình bày thuật toán Newton và viết chương trình Matlab tương ứng giải bài toán quy hoạch lồi với ràng buộc tuyến tính với điểm xuất phát là chấp nhận được và với điểm xuất phát bất kỳ.
 
-17. Trình bày thuật toán hàm chặn Newton và viết chương trình Matlab tươ[ng ứng …]
-    *(Bị cắt trong ảnh — cần bổ sung phần còn lại.)*
+17. Trình bày thuật toán hàm chắn Newton và viết chương trình Matlab tương ứng giải bài toán quy hoạch lồi tổng quát.
 
-18. *(Chưa có trong ảnh — cần bổ sung.)*
+18. Trình bày giải thuật Đơn hình Beale và viết chương trình Matlab tương ứng giải Quy hoạch toàn phương.
+
 ## Phân nhóm
 
 | Nhóm | Câu | Loại |
@@ -51,3 +49,4 @@
 | Tối ưu một biến | 6, 7 | Lý thuyết + code |
 | Tối ưu không ràng buộc *n* biến | 8, 9, 10, 11, 12 | Lý thuyết + code |
 | Quy hoạch lồi có ràng buộc | 14, 15, 16, 17 | Lý thuyết + code |
+| Quy hoạch toàn phương | 18 | Lý thuyết + code |

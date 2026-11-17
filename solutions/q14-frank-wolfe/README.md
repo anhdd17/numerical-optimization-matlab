@@ -77,7 +77,7 @@ Chọn hướng có $`\nabla f(x_k)^T d`$ nhỏ hơn. Bước lùi giảm trọn
 
 **Tính thưa.** $`x_k`$ là tổ hợp lồi của $`x_0`$ và nhiều nhất $`k`$ đỉnh. Trên đơn hình $`\{x \ge 0, \sum x_i = 1\}`$, các đỉnh là vector đơn vị, nên $`x_k`$ có nhiều nhất $`k + 1`$ thành phần khác 0 (ví dụ 3). Đây là lý do Frank–Wolfe được dùng nhiều trong học máy (bài toán trên đơn hình, chuẩn $`\ell_1`$, chuẩn nhân).
 
-**So sánh.** Mỗi bước Frank–Wolfe giải một bài toán tuyến tính, thường rẻ hơn phép chiếu lên $`D`$ (một bài toán toàn phương). Đổi lại tốc độ chỉ $`O(1/k)`$, chậm hơn nhiều so với các phương pháp dùng thông tin bậc hai (Newton, câu 16).
+**So sánh.** Mỗi bước Frank–Wolfe giải một bài toán tuyến tính, thường rẻ hơn phép chiếu lên $`D`$ (một bài toán toàn phương). Đổi lại tốc độ chỉ $`O(1/k)`$, chậm hơn nhiều so với các phương pháp dùng thông tin bậc hai (Newton, [câu 16](../q16-newton-equality-constrained/)).
 
 ## 4. Chương trình Matlab
 
@@ -178,5 +178,5 @@ Solver `qp`: $`f^* = -0.1272997914`$, danh mục tối ưu có **14** tài sản
 
 - Frank–Wolfe chỉ cần giải các bài toán **tuyến tính** trên $`D`$, mọi điểm lặp tự động chấp nhận được, không cần phép chiếu. Thuật toán rất đơn giản và rẻ khi bài toán tuyến tính con dễ (đơn hình, hình hộp, tập luồng trên mạng).
 - Khe $`G_k`$ cho chứng chỉ sai số $`f(x_k) - f^* \le G_k`$ miễn phí ở mỗi bước, là tiêu chuẩn dừng tin cậy mà không cần biết $`f^*`$.
-- Tốc độ chung là $`O(1/k)`$, và đúng là $`\Theta(1/k)`$ khi nghiệm nằm giữa một mặt (ví dụ 1). Để đạt độ chính xác cao nên dùng biến thể có bước lùi (hội tụ tuyến tính với $`f`$ lồi mạnh) hoặc phương pháp bậc hai (câu 16, 17).
+- Tốc độ chung là $`O(1/k)`$, và đúng là $`\Theta(1/k)`$ khi nghiệm nằm giữa một mặt (ví dụ 1). Để đạt độ chính xác cao nên dùng biến thể có bước lùi (hội tụ tuyến tính với $`f`$ lồi mạnh) hoặc phương pháp bậc hai ([câu 16](../q16-newton-equality-constrained/), câu 17).
 - Biểu diễn $`x_k`$ qua ít đỉnh làm nghiệm gần đúng **thưa**, có ý nghĩa trong ứng dụng (danh mục ít tài sản).

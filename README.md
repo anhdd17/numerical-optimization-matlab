@@ -36,9 +36,9 @@ Bài tập lớn môn **Tối ưu hóa** (Thạc sĩ AI Engineering, học kỳ 
 | 13 | Quy hoạch lồi: chính quy, KKT | [`q13-convex-programming`](solutions/q13-convex-programming/) | ✅ |
 | 14 | Frank–Wolfe | [`q14-frank-wolfe`](solutions/q14-frank-wolfe/) | ✅ |
 | 15 | Rosen, Murtagh–Sargent | [`q15-gradient-projection`](solutions/q15-gradient-projection/) | ✅ |
-| 16 | Newton cho quy hoạch lồi ràng buộc tuyến tính | — | ⬜ |
-| 17 | Hàm chặn Newton | — | ⬜ |
-| 18 | *(chưa có đề)* | — | ⬜ |
+| 16 | Newton cho quy hoạch lồi ràng buộc tuyến tính | [`q16-newton-equality-constrained`](solutions/q16-newton-equality-constrained/) | ✅ |
+| 17 | Hàm chắn Newton | — | ⬜ |
+| 18 | Đơn hình Beale cho quy hoạch toàn phương | — | ⬜ |
 
 ## Chạy chương trình
 
