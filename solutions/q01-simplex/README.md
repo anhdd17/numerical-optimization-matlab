@@ -8,7 +8,7 @@ $$
 \min\; f(x) = c^T x \quad \text{với}\quad Ax = b,\; x \ge 0,
 $$
 
-trong đó $A \in \mathbb{R}^{m\times n}$, $\operatorname{rank} A = m < n$, $b \in \mathbb{R}^m$, $b \ge 0$ (nếu $b_i < 0$ thì nhân hai vế của ràng buộc thứ $i$ với $-1$).
+trong đó $A \in \mathbb{R}^{m\times n}$, $\mathrm{rank}\,A = m < n$, $b \in \mathbb{R}^m$, $b \ge 0$ (nếu $b_i < 0$ thì nhân hai vế của ràng buộc thứ $i$ với $-1$).
 
 ## 2. Các khái niệm cơ sở
 
