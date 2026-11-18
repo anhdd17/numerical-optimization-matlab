@@ -10,6 +10,7 @@ Bài tập lớn môn **Tối ưu hóa** (Thạc sĩ AI Engineering, học kỳ 
 .
 ├── problems/            # Đề bài (README.md) và ảnh chụp đề gốc
 ├── tools/               # Script kiểm tra công thức trên GitHub
+├── exams/               # Lời giải bài kiểm tra (dùng lại code trong solutions/)
 └── solutions/
     └── qNN-<topic>/     # Mỗi câu một thư mục
         ├── README.md    # Báo cáo: lý thuyết, giải thuật, ví dụ
@@ -39,6 +40,12 @@ Bài tập lớn môn **Tối ưu hóa** (Thạc sĩ AI Engineering, học kỳ 
 | 16 | Newton cho quy hoạch lồi ràng buộc tuyến tính | [`q16-newton-equality-constrained`](solutions/q16-newton-equality-constrained/) | ✅ |
 | 17 | Hàm chắn Newton | [`q17-barrier-method`](solutions/q17-barrier-method/) | ✅ |
 | 18 | Đơn hình Beale cho quy hoạch toàn phương | [`q18-beale-quadratic-programming`](solutions/q18-beale-quadratic-programming/) | ✅ |
+
+## Bài kiểm tra
+
+| Bài | Nội dung | Thư mục |
+|---|---|---|
+| Kiểm tra số 1, đề 1 | Gauss–Seidel, cơ sở/phương án QHTT, Newton, một biến, gradient, quán tính, tựa Newton; tự luận: quy hoạch lồi, đối ngẫu, KKT | [`exams/test1-paper1`](exams/test1-paper1/) |
 
 ## Chạy chương trình
 

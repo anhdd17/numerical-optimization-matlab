@@ -50,3 +50,7 @@
 | Tối ưu không ràng buộc *n* biến | 8, 9, 10, 11, 12 | Lý thuyết + code |
 | Quy hoạch lồi có ràng buộc | 14, 15, 16, 17 | Lý thuyết + code |
 | Quy hoạch toàn phương | 18 | Lý thuyết + code |
+
+## Bài kiểm tra số 1 (đề số 1)
+
+Nguồn: file `bai KT.pdf`, ảnh chụp: [trang 1](images/test1-page-1.jpg), [trang 2](images/test1-page-2.jpg). Lời giải: [`exams/test1-paper1`](../exams/test1-paper1/).
