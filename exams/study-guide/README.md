@@ -139,7 +139,7 @@ Nửa xác định dương ($`\succeq 0`$) thì cần **mọi** định thức c
 Có hai dạng chính.
 
 **Dạng 1. Bài toán quy hoạch lồi, đối ngẫu, KKT** (Đề số 1 ra dạng này): "(P) có lồi không? Viết đối ngẫu và KKT. Giải với $`n = 2`$."
-- Lời giải mẫu: [Đề số 1, Phần B](../test1-paper1/#phần-b) ($`\min \sum x_i \ln(a + x_i)`$ trên đơn hình, đối ngẫu qua hàm Lambert W) và [đề luyện, Phần B](practice.md#phần-b) (hàm bậc hai, chia trường hợp theo tháng sinh).
+- Lời giải mẫu: [Đề số 1, Phần B](../test1-paper1/#phần-b) ($`\min \sum x_i \ln(a + x_i)`$ trên đơn hình, đối ngẫu qua hàm Lambert W) [đề luyện số 1, Phần B](practice.md#phần-b) (hàm bậc hai, chia trường hợp theo tháng sinh) và [đề luyện số 2, Phần B](practice.md#phần-b-đề-luyện-số-2) (KKT, đối ngẫu và đường trung tâm của hàm chắn).
 - 7 bài có lời giải đầy đủ: [kkt-duality-convex](topics/kkt-duality-convex.md). Gồm giải KKT theo tập tích cực, chính quy và phản ví dụ, đối ngẫu QP, đối ngẫu LP với điều kiện bù, water-filling, hàm bậc hai trên đơn hình, chứng minh KKT đủ.
 
 **Dạng 2. "Trình bày thuật toán X, viết chương trình, lấy ví dụ minh họa"** (đúng như đề bài tập lớn). Khung 5 phần, mỗi phần chỉ cần ngắn:
@@ -278,7 +278,7 @@ Cách gọi cụ thể cho từng câu có trong các script `check_*.m` ([mục
 | 4 | [kkt-duality-convex](topics/kkt-duality-convex.md) câu 4, 5 | Câu hỏi mẫu, tự luận 4.1, 5.1, 5.2 |
 | 5 | [kkt-duality-convex](topics/kkt-duality-convex.md) câu 13 + mục 5 (khuôn tự luận) | Phần B Đề số 1, tự luận 13.1, 13.2 |
 | 6 | [constrained-methods](topics/constrained-methods.md) câu 14–17 + [lp-and-qp](topics/lp-and-qp.md) câu 18 | Câu hỏi mẫu 14.x–18.x |
-| 7 | [Đề luyện](practice.md) làm đủ 90 phút, rồi soát với đáp án | Tự chấm, ôn lại phần sai |
+| 7 | [Đề luyện số 1 và số 2](practice.md) làm mỗi đề đủ 90 phút, rồi soát với đáp án | Tự chấm, ôn lại phần sai |
 
 Mỗi buổi: đọc lý thuyết cốt lõi, **gấp tài liệu tự làm câu hỏi mẫu**, rồi mới mở đáp án. Với các câu thuật toán, tự tính tay 1–2 bước rồi so với bảng in của chương trình.
 
@@ -286,12 +286,14 @@ Mỗi buổi: đọc lý thuyết cốt lõi, **gấp tài liệu tự làm câu
 
 ## 9. Đề luyện và kiểm chứng
 
-- [Đề luyện và ngân hàng tự luận](practice.md): một đề luyện theo khuôn Đề số 1 kèm lời giải, và danh sách bài tự luận có lời giải.
+- [Đề luyện và ngân hàng tự luận](practice.md): đề luyện số 1 (8 câu, khuôn Đề số 1), đề luyện số 2 (đúng format 12 câu + tự luận, phủ câu 1–6, 9, 13–18), cả hai có lời giải, và danh sách bài tự luận có lời giải.
+- **Bản đọc offline** [`study-guide.pdf`](study-guide.pdf) (và `study-guide.html`): toàn bộ tài liệu trong một file, công thức đã dựng sẵn, đáp án mở sẵn. Mang theo file này vào phòng thi, vì máy không có mạng thì file `.md` chỉ hiện mã LaTeX thô. Sửa tài liệu xong thì xuất lại bằng `bash export/make_pdf.sh` (cần pandoc và Google Chrome).
 - Script kiểm chứng (chạy trong `exams/study-guide`, bằng `octave --no-gui --eval <tên>` hoặc trong MATLAB):
 
 | Script | Kiểm chứng |
 |---|---|
-| [`run_practice.m`](run_practice.m) | `toolkit/` trên Đề số 1; đáp án đề luyện |
+| [`run_practice.m`](run_practice.m) | `toolkit/` trên Đề số 1; đáp án đề luyện số 1 |
+| [`run_practice2.m`](run_practice2.m) | Đáp án đề luyện số 2 (12 câu + Phần B) |
 | [`check_lp_qp.m`](check_lp_qp.m) | Câu hỏi mẫu câu 1, 2, 3, 18 |
 | [`check_kkt_duality.m`](check_kkt_duality.m) | Câu hỏi mẫu và tự luận câu 4, 5, 13 |
 | [`check_unconstrained.m`](check_unconstrained.m) | Câu hỏi mẫu câu 6–12 |

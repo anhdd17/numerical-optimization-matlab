@@ -1,0 +1,17 @@
+@page { size: A4; margin: 14mm 13mm; }
+body { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 10.5pt; line-height: 1.4; max-width: none; margin: 0; }
+h1 { page-break-before: always; border-bottom: 2px solid #333; padding-bottom: 4px; }
+h1:first-of-type { page-break-before: avoid; }
+h2 { border-bottom: 1px solid #bbb; margin-top: 1.4em; }
+h2, h3, h4 { page-break-after: avoid; }
+table { border-collapse: collapse; margin: 0.6em 0; font-size: 9.5pt; page-break-inside: auto; }
+tr { page-break-inside: avoid; }
+th, td { border: 1px solid #999; padding: 3px 6px; vertical-align: top; }
+th { background: #eee; }
+pre { background: #f5f5f5; border: 1px solid #ddd; padding: 6px; white-space: pre-wrap; word-break: break-word; font-size: 9pt; page-break-inside: avoid; }
+code { font-family: Menlo, Consolas, monospace; font-size: 9pt; }
+details { border-left: 3px solid #4a7; padding-left: 8px; margin: 0.5em 0; }
+summary { font-weight: bold; }
+img { max-width: 100%; }
+math[display="block"] { margin: 0.5em 0; overflow-x: auto; }
+nav#TOC { page-break-after: always; }
