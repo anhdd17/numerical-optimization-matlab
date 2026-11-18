@@ -2,6 +2,8 @@
 
 > Đề gốc: ảnh chụp [trang 1](../../problems/images/test1-page-1.jpg), [trang 2](../../problems/images/test1-page-2.jpg). Thời gian 90 phút, được dùng Matlab.
 
+Tài liệu ôn thi theo khuôn đề này: [`exams/study-guide`](../study-guide/).
+
 Lời giải dùng lại chương trình của bài tập lớn (`solutions/qNN-*`); mỗi câu gồm giải tay, kết quả chạy chương trình và đối chiếu với solver. Toàn bộ số liệu dưới đây lấy từ output của `run_examples.m`.
 
 ## Đáp án tóm tắt

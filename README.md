@@ -46,6 +46,7 @@ Bài tập lớn môn **Tối ưu hóa** (Thạc sĩ AI Engineering, học kỳ 
 | Bài | Nội dung | Thư mục |
 |---|---|---|
 | Kiểm tra số 1, đề 1 | Gauss–Seidel, cơ sở/phương án QHTT, Newton, một biến, gradient, quán tính, tựa Newton; tự luận: quy hoạch lồi, đối ngẫu, KKT | [`exams/test1-paper1`](exams/test1-paper1/) |
+| Tài liệu ôn thi | Cả 18 câu: lý thuyết cốt lõi, dạng câu hỏi, câu hỏi mẫu có đáp án, tự luận; lệnh Matlab, bộ hàm `toolkit/`, đề luyện | [`exams/study-guide`](exams/study-guide/) |
 
 ## Chạy chương trình
 
